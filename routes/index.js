@@ -1,5 +1,8 @@
 const router = require('express').Router();
+const {getCars, addCar} = require('../controllers/carController');
 
+router.get('/cars', getCars);
+router.post('/cars', addCar);
 router.use('/', require('./swagger'));
 router.use('/cars', require('./cars'));
 
